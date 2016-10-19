@@ -5,6 +5,7 @@ import {AuthorsComponent} from './authors.component'
     selector: 'my-app',
     template: `
     <h1>{{title}}</h1>
+    <h1 [textContent]="text"></h1>
     img [src]="imageUrl"/>
     img bind-src="imageUrl"/>
     <course></course>
