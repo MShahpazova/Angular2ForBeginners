@@ -7,8 +7,8 @@ import {Directive, ElementRef, Renderer} from 'angular2/core';
     }
 })
 export class AutoGrowDirective {
-    constructor(el: Element, renderer: Renderer){
-        
+    constructor(private el: Element, private renderer: Renderer){
+
     }
     // inside the method below we access the host element
      onFocus(){
