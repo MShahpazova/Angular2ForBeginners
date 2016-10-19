@@ -5,14 +5,14 @@ import {AuthorsComponent} from './authors.component'
     selector: 'my-app',
     template: `
     <h1>{{title}}</h1>
-    <h1 [textContent]="text"></h1>
-    img [src]="imageUrl"/>
-    img bind-src="imageUrl"/>
     <course></course>
-    <author></author>`,
+    <author></author>
+    <button class="btn btn-primary"[class.active]="isActive">Submit</button>
+     `,
     directives: [CoursesComponent, AuthorsComponent]
 })
 export class AppComponent {
     title = "Angular App";
     imageUrl = "http://lorempixel.com/400/200/"
+    isActive = true;
  } 
