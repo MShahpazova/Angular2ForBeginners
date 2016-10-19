@@ -1,4 +1,4 @@
-import {Directive, ElementRef} from 'angular2/core';
+import {Directive, ElementRef, Renderer} from 'angular2/core';
 @Directive ({
     selector: '[autoGrow]',
     host: {
