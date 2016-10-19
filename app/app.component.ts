@@ -7,12 +7,13 @@ import {AuthorsComponent} from './authors.component'
     <h1>{{title}}</h1>
     <course></course>
     <author></author>
-    <button class="btn btn-primary"[class.active]="isActive">Submit</button>
+    <button class="btn btn-primary"
+    [style.backgroundColor]="isActive ? 'blue' : 'gray'">Submit</button>
      `,
     directives: [CoursesComponent, AuthorsComponent]
 })
 export class AppComponent {
     title = "Angular App";
     imageUrl = "http://lorempixel.com/400/200/"
-    isActive = true;
+    isActive = false;
  } 
