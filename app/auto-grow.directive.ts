@@ -7,11 +7,17 @@ import {Directive, ElementRef, Renderer} from 'angular2/core';
     }
 })
 export class AutoGrowDirective {
-    constructor(private el: Element, private renderer: Renderer){
+
+    constructor(private el: ElementRef, private renderer: Renderer){
 
     }
+
     // inside the method below we access the host element
      onFocus(){
-
+         this.renderer.setElementStyle(this.el.nativeElement, 'width', '200')
      }
+
+     onBlur(){
+          this.renderer.setElementStyle(this.el.nativeElement, 'width', '120')
+    }
 } 
