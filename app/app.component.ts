@@ -7,8 +7,7 @@ import {AuthorsComponent} from './authors.component'
     <h1>{{title}}</h1>
     <course></course>
     <author></author>
-    <button class="btn btn-primary"
-    [style.backgroundColor]="isActive ? 'blue' : 'gray'">Submit</button>
+    <button (click)="onClick($event)">Submit</button>
      `,
     directives: [CoursesComponent, AuthorsComponent]
 })
@@ -16,4 +15,8 @@ export class AppComponent {
     title = "Angular App";
     imageUrl = "http://lorempixel.com/400/200/"
     isActive = false;
+
+    onClick($event){
+        console.log("Clicked");
+    }
  } 
