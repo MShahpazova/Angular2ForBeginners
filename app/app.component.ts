@@ -6,6 +6,8 @@ import {AuthorsComponent} from './authors.component'
     template: `
         <input type="text" [value]="title" (input)="title = $event.target.value"/>
         <input type="button" (click)= "title = ''" value="Clear"/>
+        <input type="text" [(ngModel)]="title"/>
+        <input type="text" bindon-ngModel="title"/>
         Preview: {{title}}
      `,
     directives: [CoursesComponent, AuthorsComponent]
