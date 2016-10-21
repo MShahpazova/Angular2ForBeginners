@@ -5,7 +5,7 @@ import {AuthorsComponent} from './authors.component'
     selector: 'my-app',
     template: `
         <input type="text" [value]="title" (input)="title = $event.target.value"/>
-        
+        <input type="button" (click)= "title = ''" value="Clear"/>
         Preview: {{title}}
      `,
     directives: [CoursesComponent, AuthorsComponent]
