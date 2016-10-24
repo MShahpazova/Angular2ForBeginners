@@ -5,7 +5,7 @@ import {Component, Input, Output, EventEmitter } from 'angular2/core';
     templateUrl: 'app/favorite.template.html',
     styles: [`
     .glyphicon-star {
-        color: orange;
+        color: fuchsia;
     }
     `]
 })
