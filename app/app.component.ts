@@ -5,7 +5,7 @@ import {FavoriteComponent} from './favorite.component'
 @Component({
     selector: 'my-app',
     template: `
-
+        <i class="glyphicon glyphicon-star"></i>
         <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"> </favorite>
      `,
     directives: [FavoriteComponent]
