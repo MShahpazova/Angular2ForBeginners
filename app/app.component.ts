@@ -5,18 +5,15 @@ import {FavoriteComponent} from './favorite.component'
 @Component({
     selector: 'my-app',
     template: `
-        <course></course>
-        <author></author>
-        <input type="text" [value]="title" (input)="title = $event.target.value"/>
-        <input type="button" (click)= "title = ''" value="Clear"/>
-        <input type="text" [(ngModel)]="title"/>
-        <input type="text" bindon-ngModel="title"/>
-        <favorite> </favorite>
-        Preview: {{title}}
+
+        <favorite [isFavorite]="post.isFavorite"> </favorite>
      `,
-    directives: [CoursesComponent, AuthorsComponent, FavoriteComponent]
+    directives: [FavoriteComponent]
 })
 export class AppComponent {
-    title = "Angular App";
+    post = {
+        title: "Title",
+        isFavorite: true
+    }
 
  } 
