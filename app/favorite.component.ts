@@ -1,4 +1,4 @@
-import {Component, Input, EventEmitter} from 'angular2/core';
+import {Component, Input, EventEmitter } from 'angular2/core';
 
 @Component({
     selector: 'favorite',
@@ -14,6 +14,7 @@ import {Component, Input, EventEmitter} from 'angular2/core';
 export class FavoriteComponent {
    @Input('is-favorite') isFavorite = false; 
 
+   change = new EventEmitter();
     onClick(){
         this.isFavorite = !this.isFavorite;
     }
