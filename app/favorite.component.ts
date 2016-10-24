@@ -10,10 +10,9 @@ import {Component, Input} from 'angular2/core';
         (click)="onClick()">
         </i>
     `,
-    inputs: ['isFavorite:is-favorite']
 })
 export class FavoriteComponent {
-   @Input() isFavorite = false; 
+   @Input('is-favorite') isFavorite = false; 
 
     onClick(){
         this.isFavorite = !this.isFavorite;
