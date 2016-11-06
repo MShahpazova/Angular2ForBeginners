@@ -20,17 +20,23 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             LikeComponent = (function () {
                 function LikeComponent() {
-                    this.isLiked = false;
+                    this.iLike = false;
+                    this.totalLikes = 0;
                     this.change = new core_1.EventEmitter();
                 }
                 LikeComponent.prototype.onClick = function () {
-                    this.isLiked = !this.isLiked;
-                    this.change.emit({ newValue: this.isLiked });
+                    this.iLike = !this.iLike;
+                    this.totalLikes += this.iLike ? 1 : -1;
+                    this.change.emit({ newValue: this.iLike });
                 };
                 __decorate([
                     core_1.Input(), 
                     __metadata('design:type', Object)
-                ], LikeComponent.prototype, "isLiked", void 0);
+                ], LikeComponent.prototype, "iLike", void 0);
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], LikeComponent.prototype, "totalLikes", void 0);
                 __decorate([
                     core_1.Output(), 
                     __metadata('design:type', Object)
@@ -38,7 +44,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 LikeComponent = __decorate([
                     core_1.Component({
                         selector: 'like',
-                        template: "<i class=\"glyphicon glyphicon-heart\"\n     [style.color]=\"isLiked ? 'deepPink' : lightGrey\"\n     (click)=\"onClick()\">\n     </i>"
+                        template: "<i class=\"glyphicon glyphicon-heart\"\n     [class.highlighted]=\"iLike\"\n     (click)=\"onClick()\">\n     </i>\n     <span> {{totalLikes}}</span>\n     ",
+                        styles: ["\n     .glyphicon-heart {\n         color: #ccc;\n         cursor: pointer;\n        }\n     .highlighted {\n         color: deeppink;    \n        }\n    "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LikeComponent);
