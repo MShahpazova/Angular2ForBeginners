@@ -41,7 +41,7 @@ System.register(['angular2/core', './favorite.component', './like.component', '.
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <like [totalLikes]=\"tweet.totalLikes\" [iLike]=\"tweet.iLike\" (change)=\"onLikeChange($event)\"> </like>\n        <br>\n        {{tweet.content | summary}}\n     ",
+                        template: "\n        <like [totalLikes]=\"tweet.totalLikes\" \n         [iLike]=\"tweet.iLike\" (change)=\"onLikeChange($event)\"> </like>\n        <br>\n        <span> {{totalLikes}}</span>\n        {{tweet.content | summary}}\n     ",
                         pipes: [summary_pipe_1.SummaryPipe],
                         directives: [favorite_component_1.FavoriteComponent, like_component_1.LikeComponent]
                     }), 

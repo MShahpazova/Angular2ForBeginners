@@ -7,8 +7,10 @@ import {SummaryPipe} from './summary.pipe'
 @Component({
     selector: 'my-app',
     template: `
-        <like [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike" (change)="onLikeChange($event)"> </like>
+        <like [totalLikes]="tweet.totalLikes" 
+         [iLike]="tweet.iLike" (change)="onLikeChange($event)"> </like>
         <br>
+        <span> {{totalLikes}}</span>
         {{tweet.content | summary}}
      `,
      pipes: [SummaryPipe],
