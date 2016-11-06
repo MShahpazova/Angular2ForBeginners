@@ -1,38 +1,15 @@
 import {Component} from 'angular2/core';
-import {CoursesComponent} from './courses.component'
-import {AuthorsComponent} from './authors.component'
-import {FavoriteComponent} from './favorite.component'
-import {LikeComponent} from './like.component'
-import {SummaryPipe} from './summary.pipe'
+import {BootStrapPanel} from './bootstrap.panel.component';
+
 @Component({
     selector: 'my-app',
+    directives: [BootStrapPanel],
     template: `
-        <like [totalLikes]="tweet.totalLikes" 
-         [iLike]="tweet.iLike" (change)="onLikeChange($event)"> </like>
-        <br>
-        <span> {{totalLikes}}</span>
-        {{tweet.content}}
-        <li>Author is: {{tweet.author?.name}}</li>
-     `,
-     pipes: [SummaryPipe],
-    directives: [FavoriteComponent, LikeComponent]
+     <bs-panel>
+        <div class="heading">This is the heading</div>
+        <div class="body">This is the body</div>
+      </bs-panel>
+     `
 })
 export class AppComponent {
-    tweet = {
-         author: null,
-         iLike: false,
-         totalLikes: 5,
-         content: `
-         MAria
-         Maria Maria Maria Maria Maria Maria
-         Maria Maria Maria Maria Maria Maria
-         Maria Maria Maria Maria Maria Maria
-         Maria Maria Maria Maria Maria Maria
-         `
-    }
-
-       onLikeChange($event){
-           
-           console.log($event)
- } 
 }

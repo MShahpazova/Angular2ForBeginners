@@ -1,4 +1,4 @@
-System.register(['angular2/core', './favorite.component', './like.component', './summary.pipe'], function(exports_1, context_1) {
+System.register(['angular2/core', './bootstrap.panel.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,41 +10,25 @@ System.register(['angular2/core', './favorite.component', './like.component', '.
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, favorite_component_1, like_component_1, summary_pipe_1;
+    var core_1, bootstrap_panel_component_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (favorite_component_1_1) {
-                favorite_component_1 = favorite_component_1_1;
-            },
-            function (like_component_1_1) {
-                like_component_1 = like_component_1_1;
-            },
-            function (summary_pipe_1_1) {
-                summary_pipe_1 = summary_pipe_1_1;
+            function (bootstrap_panel_component_1_1) {
+                bootstrap_panel_component_1 = bootstrap_panel_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.tweet = {
-                        author: null,
-                        iLike: false,
-                        totalLikes: 5,
-                        content: "\n         MAria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         "
-                    };
                 }
-                AppComponent.prototype.onLikeChange = function ($event) {
-                    console.log($event);
-                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <like [totalLikes]=\"tweet.totalLikes\" \n         [iLike]=\"tweet.iLike\" (change)=\"onLikeChange($event)\"> </like>\n        <br>\n        <span> {{totalLikes}}</span>\n        {{tweet.content}}\n        <li>Author is: {{tweet.author?.name}}</li>\n     ",
-                        pipes: [summary_pipe_1.SummaryPipe],
-                        directives: [favorite_component_1.FavoriteComponent, like_component_1.LikeComponent]
+                        directives: [bootstrap_panel_component_1.BootStrapPanel],
+                        template: "\n     <bs-panel>\n        <div class=\"heading\">This is the heading</div>\n        <div class=\"body\">This is the body</div>\n      </bs-panel>\n     "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
