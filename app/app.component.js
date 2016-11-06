@@ -30,6 +30,7 @@ System.register(['angular2/core', './favorite.component', './like.component', '.
             AppComponent = (function () {
                 function AppComponent() {
                     this.tweet = {
+                        author: null,
                         iLike: false,
                         totalLikes: 5,
                         content: "\n         MAria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         "
@@ -41,7 +42,7 @@ System.register(['angular2/core', './favorite.component', './like.component', '.
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <like [totalLikes]=\"tweet.totalLikes\" \n         [iLike]=\"tweet.iLike\" (change)=\"onLikeChange($event)\"> </like>\n        <br>\n        <span> {{totalLikes}}</span>\n        {{tweet.content | summary}}\n     ",
+                        template: "\n        <like [totalLikes]=\"tweet.totalLikes\" \n         [iLike]=\"tweet.iLike\" (change)=\"onLikeChange($event)\"> </like>\n        <br>\n        <span> {{totalLikes}}</span>\n        {{tweet.content}}\n        <li>Author is: {{tweet.author?.name}}</li>\n     ",
                         pipes: [summary_pipe_1.SummaryPipe],
                         directives: [favorite_component_1.FavoriteComponent, like_component_1.LikeComponent]
                     }), 

@@ -11,13 +11,15 @@ import {SummaryPipe} from './summary.pipe'
          [iLike]="tweet.iLike" (change)="onLikeChange($event)"> </like>
         <br>
         <span> {{totalLikes}}</span>
-        {{tweet.content | summary}}
+        {{tweet.content}}
+        <li>Author is: {{tweet.author?.name}}</li>
      `,
      pipes: [SummaryPipe],
     directives: [FavoriteComponent, LikeComponent]
 })
 export class AppComponent {
     tweet = {
+         author: null,
          iLike: false,
          totalLikes: 5,
          content: `
