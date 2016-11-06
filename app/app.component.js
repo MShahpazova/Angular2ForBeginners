@@ -1,4 +1,4 @@
-System.register(['angular2/core', './favorite.component', './like.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './favorite.component', './like.component', './summary.pipe'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './favorite.component', './like.component'], f
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, favorite_component_1, like_component_1;
+    var core_1, favorite_component_1, like_component_1, summary_pipe_1;
     var AppComponent;
     return {
         setters:[
@@ -22,27 +22,27 @@ System.register(['angular2/core', './favorite.component', './like.component'], f
             },
             function (like_component_1_1) {
                 like_component_1 = like_component_1_1;
+            },
+            function (summary_pipe_1_1) {
+                summary_pipe_1 = summary_pipe_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.post = {
-                        title: "Title",
-                        isFavorite: true,
-                        isLiked: false,
-                        numberofLikes: 5
+                    this.tweet = {
+                        iLike: false,
+                        totalLikes: 5,
+                        content: "\n         MAria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         Maria Maria Maria Maria Maria Maria\n         "
                     };
                 }
-                AppComponent.prototype.onFavoriteChange = function ($event) {
-                    console.log($event);
-                };
                 AppComponent.prototype.onLikeChange = function ($event) {
-                    this.post.numberofLikes += $event.newValue === true ? 1 : -1;
+                    console.log($event);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <like (change)=\"onLikeChange($event)\"></like>\n        {{post.numberofLikes}}\n     ",
+                        template: "\n        <like [totalLikes]=\"tweet.totalLikes\" [iLike]=\"tweet.iLike\" (change)=\"onLikeChange($event)\"> </like>\n        <br>\n        {{tweet.content | summary}}\n     ",
+                        pipes: [summary_pipe_1.SummaryPipe],
                         directives: [favorite_component_1.FavoriteComponent, like_component_1.LikeComponent]
                     }), 
                     __metadata('design:paramtypes', [])
@@ -53,6 +53,4 @@ System.register(['angular2/core', './favorite.component', './like.component'], f
         }
     }
 });
-//  <i class="glyphicon glyphicon-star"></i>
-// <favorite [isFavorite]="post.isFavorite" (change)="onFavoriteChange($event)"> </favorite> 
 //# sourceMappingURL=app.component.js.map
