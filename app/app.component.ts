@@ -5,7 +5,10 @@ import {ZippyComponent} from './zippy.component'
     selector: 'my-app',
     template: `
       <ul>
-        <li> *ngFor="#course of courses"></li>
+      <
+        <li> *ngFor="#course of courses, #i = index">
+          {{i + 1}} -- {{course}}
+        </li>
       </ul>
      `
 })
