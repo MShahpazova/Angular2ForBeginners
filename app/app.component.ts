@@ -5,7 +5,7 @@ import {ZippyComponent} from './zippy.component'
     selector: 'my-app',
     template: `
       <ul>
-      <
+      <!--Leading aserisk tells angular to treat an element as a template-->
         <li> *ngFor="#course of courses, #i = index">
           {{i + 1}} -- {{course}}
         </li>
@@ -14,4 +14,4 @@ import {ZippyComponent} from './zippy.component'
 })
 export class AppComponent {
   courses = ['Course 1', 'Course 2', 'Course 3']
-}
+} 
