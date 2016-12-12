@@ -1,4 +1,4 @@
-System.register(['angular2/core', './bootstrap.panel.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './bootstrap.panel.component', './zippy.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './bootstrap.panel.component'], function(expor
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, bootstrap_panel_component_1;
+    var core_1, bootstrap_panel_component_1, zippy_component_1;
     var AppComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './bootstrap.panel.component'], function(expor
             },
             function (bootstrap_panel_component_1_1) {
                 bootstrap_panel_component_1 = bootstrap_panel_component_1_1;
+            },
+            function (zippy_component_1_1) {
+                zippy_component_1 = zippy_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -27,8 +30,8 @@ System.register(['angular2/core', './bootstrap.panel.component'], function(expor
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [bootstrap_panel_component_1.BootStrapPanel],
-                        template: "\n     <bs-panel>\n        <div class=\"heading\">This is the heading</div>\n        <div class=\"body\">This is the body</div>\n      </bs-panel>\n     "
+                        directives: [bootstrap_panel_component_1.BootStrapPanel, zippy_component_1.ZippyComponent],
+                        template: "\n     <bs-panel>\n        <div class=\"heading\">This is the heading</div>\n        \n        <div class=\"body\">This is the body</div>\n      </bs-panel>\n      <zippy>Maria</zippy>\n     "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

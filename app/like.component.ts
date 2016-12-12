@@ -12,6 +12,7 @@ import {Component, Input, Output, EventEmitter } from 'angular2/core';
      .glyphicon-heart {
          color: #ccc;
          cursor: pointer;
+         <i class="glyphicon glyphicon-heart"
         }
      .highlighted {
          color: deeppink;    

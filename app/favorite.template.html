@@ -1,7 +1,6 @@
-<i class="glyphicon" [class.glyphicon-empty]="!isFavorite" 
-[class.glyphicon-star]="isFavorite" 
+<i class="glyphicon" 
 [ngClass]="{
     'glyphicon-star-empty': !isFavorite,
-    'glyphicon-star'
+    'glyphicon-star': isFavorite
 }"
 (click)="onClick()"></i>

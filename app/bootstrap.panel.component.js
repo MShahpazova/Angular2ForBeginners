@@ -24,7 +24,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 BootStrapPanel = __decorate([
                     core_1.Component({
                         selector: 'bs-panel',
-                        template: "\n    <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">\n            <ng-content select=\".heading\"></ng-content>\n        </div>\n        <div class=\"panel-body\">\n          <ng-content select=\".body\"></ng-content>\n        </div>\n    </div>\n    "
+                        template: "\n    <div class=\"panel panel-default\">\n        <div class=\"panel-heading\">\n            <ng-content select=\".heading\"></ng-content>\n        </div>\n\n    </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], BootStrapPanel);
@@ -34,4 +34,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         }
     }
 });
+// <div class="panel-body">
+//   <ng-content select=".body"></ng-content>
+// </div> 
 //# sourceMappingURL=bootstrap.panel.component.js.map
