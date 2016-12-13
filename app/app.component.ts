@@ -16,7 +16,8 @@ export class AppComponent {
 //  We can use the static Observable.of() method to create an observable from a list of
 // arguments:
   constructor() {
-    Observable.of(1);
-    Observable.of([1, 2, 3]);
+    //method is used for running an async operation at specified intervals
+    var observable = Observable.interval(1000);
+    observable.subscribe(x => console.log(x));
   }
 }

@@ -28,8 +28,9 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
                 //  We can use the static Observable.of() method to create an observable from a list of
                 // arguments:
                 function AppComponent() {
-                    Observable_1.Observable.of(1);
-                    Observable_1.Observable.of([1, 2, 3]);
+                    //method is used for running an async operation at specified intervals
+                    var observable = Observable_1.Observable.interval(1000);
+                    observable.subscribe(function (x) { return console.log(x); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({
