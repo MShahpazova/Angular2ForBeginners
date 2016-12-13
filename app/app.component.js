@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/common'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/common', 'rxjs/add/operator/debounceTime', 'rxjs/add/operator/map'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -19,19 +19,25 @@ System.register(['angular2/core', 'angular2/common'], function(exports_1, contex
             },
             function (common_1_1) {
                 common_1 = common_1_1;
-            }],
+            },
+            function (_1) {},
+            function (_2) {}],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent(fb) {
-                    this.courses = ['Course 1', 'Course 2', 'Course 3'];
                     this.form = fb.group({
                         search: []
                     });
+                    // Get a reference to the “search” control and subscribe to its valueChanges property
+                    var search = this.form.find('search');
+                    search.valueChanges.debounceTime(400)
+                        .map(function (str) { return str.replace(' ', '-'); })
+                        .subscribe(function (x) { return console.log(x); });
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n\n      <ul>\n       <li *ngFor=\"#course of courses, #i = index\">\n          {{i + 1}} -- {{course}}\n        </li>\n      </ul>\n     \n     <form [ngFormModel]=\"form\">\n    <input type=\"text\" ngControl=\"search\">\n    </form>\n       \n\n     "
+                        template: "\n       <form [ngFormModel]=\"form\">\n    <input type=\"text\" ngControl=\"search\">\n    </form>\n       \n\n     "
                     }), 
                     __metadata('design:paramtypes', [common_1.FormBuilder])
                 ], AppComponent);
