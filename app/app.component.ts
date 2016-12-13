@@ -6,7 +6,7 @@ import {ZippyComponent} from './zippy.component'
     template: `
       <ul>
       <!--Leading aserisk tells angular to treat an element as a template-->
-        <li> *ngFor="#course of courses, #i = index">
+        <li *ngFor="#course of courses, #i = index">
           {{i + 1}} -- {{course}}
         </li>
       </ul>

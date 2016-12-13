@@ -1,4 +1,4 @@
-System.register(['angular2/core', './bootstrap.panel.component', './zippy.component'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,28 +10,22 @@ System.register(['angular2/core', './bootstrap.panel.component', './zippy.compon
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, bootstrap_panel_component_1, zippy_component_1;
+    var core_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (bootstrap_panel_component_1_1) {
-                bootstrap_panel_component_1 = bootstrap_panel_component_1_1;
-            },
-            function (zippy_component_1_1) {
-                zippy_component_1 = zippy_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.courses = ['Course 1', 'Course 2', 'Course 3'];
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        directives: [bootstrap_panel_component_1.BootStrapPanel, zippy_component_1.ZippyComponent],
-                        template: "\n     <bs-panel>\n        <div class=\"heading\">This is the heading</div>\n        \n        <div class=\"body\">This is the body</div>\n      </bs-panel>\n      <zippy>Maria</zippy>\n     "
+                        template: "\n      <ul>\n      <!--Leading aserisk tells angular to treat an element as a template-->\n        <li *ngFor=\"#course of courses, #i = index\">\n          {{i + 1}} -- {{course}}\n        </li>\n      </ul>\n     "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
