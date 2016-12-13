@@ -16,8 +16,11 @@ import 'rxjs/add/operator/delay';
 })
 export class AppComponent {
   constructor() {
-      var observable = Observable.fromArray([1,2,3]);
-      observable.subscribe(x=> console.log(x),
-      error => console.error(error));
+    // Simulate a failed AJAX call, by creating an observable using the static Observable.throw() method.
+    // This methid returns an observable that terminates with an exception
+    var observable = Observable.throw(new Error("Something failed"));
+    //Subscribe to this observable and provide an error handler
+    observable.subscribe(x => console.log(x),
+    error => console.error(error))
   }
 }

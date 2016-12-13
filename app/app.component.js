@@ -28,7 +28,10 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    var observable = Observable_1.Observable.fromArray([1, 2, 3]);
+                    // Simulate a failed AJAX call, by creating an observable using the static Observable.throw() method.
+                    // This methid returns an observable that terminates with an exception
+                    var observable = Observable_1.Observable.throw(new Error("Something failed"));
+                    //Subscribe to this observable and provide an error handler
                     observable.subscribe(function (x) { return console.log(x); }, function (error) { return console.error(error); });
                 }
                 AppComponent = __decorate([
