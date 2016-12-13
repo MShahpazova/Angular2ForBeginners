@@ -15,16 +15,9 @@ import 'rxjs/add/operator/delay';
      `
 })
 export class AppComponent {
-//  We can use the static Observable.of() method to create an observable from a list of
-// arguments:
   constructor() {
-    //method is used for running an async operation at specified intervals
-    var userStream = Observable.of({
-      userId: 1, username: 'mosh'
-    }).delay(2000)
-    var tweetStream = Observable.fromArray([1, 2, 3 ]).delay(1500)
-    Observable.forkJoin(userStream, tweetStream)
-    .map(joined => new Object({user: joined[0], tweets: joined[1]}))
-    .subscribe(result => console.log(result))
+      var observable = Observable.fromArray([1,2,3]);
+      observable.subscribe(x=> console.log(x),
+      error => console.error(error));
   }
 }
