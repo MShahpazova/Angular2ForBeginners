@@ -30,7 +30,13 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
                 function AppComponent() {
                     //method is used for running an async operation at specified intervals
                     var observable = Observable_1.Observable.interval(1000);
+                    observable.flatMap(function (x) {
+                        console.log("Calling the server to get the latest news");
+                        return Observable_1.Observable.of([2, 3, 4]);
+                    });
                     observable.subscribe(function (x) { return console.log(x); });
+                    observable.map(function (x) { console.log("Calling the server to get the latest news"); });
+                    return [1, 2, 3];
                 }
                 AppComponent = __decorate([
                     core_1.Component({

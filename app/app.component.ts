@@ -18,6 +18,13 @@ export class AppComponent {
   constructor() {
     //method is used for running an async operation at specified intervals
     var observable = Observable.interval(1000);
+     observable.flatMap(x => {console.log("Calling the server to get the latest news")
+    return Observable.of([2,3,4]);
+  })
     observable.subscribe(x => console.log(x));
+    observable.map(x => {console.log("Calling the server to get the latest news")})
+    return [1,2,3]
+   
   }
+
 }
