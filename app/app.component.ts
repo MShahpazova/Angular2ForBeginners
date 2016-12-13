@@ -13,26 +13,10 @@ import 'rxjs/add/observable/fromArray';
      `
 })
 export class AppComponent {
-  form: ControlGroup;
-  constructor(fb: FormBuilder){
-    var startDates = [];
-    var startDate = new Date();
-    for (var day = -2; day <= 2; day++){
-        var date = new Date(
-        startDate.getFullYear(),
-        startDate.getMonth(),
-        startDate.getDate() + day)
-        startDates.push(date);
-      } 
-
-      
-      Observable
-      .fromArray(startDates)
-      .map(date => {
-        console.log("Getting deals for date" + date);
-          return [1, 2, 3];
-        })
-      .subscribe(x => console.log(x));
-    // Get a reference to the “search” control and subscribe to its valueChanges property
-    }
+//  We can use the static Observable.of() method to create an observable from a list of
+// arguments:
+  constructor() {
+    Observable.of(1);
+    Observable.of([1, 2, 3]);
+  }
 }
