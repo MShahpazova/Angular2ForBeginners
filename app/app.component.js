@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/operator/map', 'rxjs/Observable', 'rxjs/add/observable/forkJoin', 'rxjs/add/observable/fromArray', 'rxjs/add/operator/delay'], function(exports_1, context_1) {
+System.register(['angular2/core', './post.service', 'angular2/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,36 +10,43 @@ System.register(['angular2/core', 'rxjs/add/operator/debounceTime', 'rxjs/add/op
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, Observable_1;
+    var core_1, post_service_1, http_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (_1) {},
-            function (_2) {},
-            function (Observable_1_1) {
-                Observable_1 = Observable_1_1;
+            function (post_service_1_1) {
+                post_service_1 = post_service_1_1;
             },
-            function (_3) {},
-            function (_4) {},
-            function (_5) {}],
+            function (http_1_1) {
+                http_1 = http_1_1;
+            }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
-                    // Simulate a failed AJAX call, by creating an observable using the static Observable.throw() method.
-                    // This methid returns an observable that terminates with an exception
-                    var observable = Observable_1.Observable.throw(new Error("Something failed"));
-                    //Subscribe to this observable and provide an error handler
-                    observable.subscribe(function (x) { return console.log(x); }, function (error) { return console.error(error); });
+                function AppComponent(_postService) {
+                    this._postService = _postService;
+                    this.isLoading = true;
+                    this._postService.createPost({ userId: 1, title: "a", body: "b" });
                 }
+                AppComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    //if we want to call a server we do it here
+                    this._postService.getPosts()
+                        .subscribe(function (posts) {
+                        debugger;
+                        _this.isLoading = false;
+                        console.log(posts[0].id);
+                    });
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n     "
+                        template: "\n        <div *ngIf=\"isLoading\"><i class=\"fa fa-spinner fa-spin\"></i></div>\n     ",
+                        providers: [post_service_1.PostService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [post_service_1.PostService])
                 ], AppComponent);
                 return AppComponent;
             }());
