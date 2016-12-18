@@ -9,12 +9,12 @@
           required>
           <div *ngIf="firstName.touched && firstName.errors">
             <div
-                *ngIf="firstName.touched && firstName.errors.required"
+                *ngIf="firstName.errors.required"
                 class="alert alert-danger">First name is required</div>
             </div>
             <div
                 class="alert alert-danger"
-                *ngIf="firstName.touched && firstName.errors.minlength"
+                *ngIf="firstName.errors.minlength"
                 >First name should be at least 3 characters long
             </div>
          </div>
