@@ -5,11 +5,20 @@
          #firstName="ngForm" id="firstName"
           type="text"
           class="form-control"
+          minlength="3"
           required>
-          <div
-           *ngIf="firstName.touched && !firstName.valid"
-           class="alert alert-danger">First name is required</div>
-    </div>
+          <div *ngIf="firstName.touched && firstName.errors">
+            <div
+                *ngIf="firstName.touched && firstName.errors.required"
+                class="alert alert-danger">First name is required</div>
+            </div>
+            <div
+                class="alert alert-danger"
+                *ngIf="firstName.touched && firstName.errors.minlength"
+                >First name should be at least 3 characters long
+            </div>
+         </div>
+
     <div class="form-group">
         <label for="comment">Comment</label>
         <textarea #comment="ngForm"
@@ -18,13 +27,13 @@
          cols="30"
          rows="10"
           class="form-control"
-          minlength="3"
           required>
         </textarea>
         <div 
         *ngIf="comment.touched && !comment.valid"
          class="alert alert-danger">Comment is required</div>
-    </div>
+        </div>
+
     <button class="btn btn-primary" type="submit">
         Submit
     </button>   
