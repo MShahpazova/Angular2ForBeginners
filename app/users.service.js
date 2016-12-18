@@ -47,7 +47,7 @@ System.register(['angular2/http', 'rxjs/Observable', 'rxjs/add/operator/map', 'r
                     //    .map(joined => 
                     //     new Object({user: joined[0], followers: joined[1]})
                     //     )
-                    // debugger
+        
                 };
                 UsersService = __decorate([
                     core_1.Injectable(), 

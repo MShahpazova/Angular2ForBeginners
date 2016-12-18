@@ -36,7 +36,7 @@ export class UsersService {
         //    .map(joined => 
         //     new Object({user: joined[0], followers: joined[1]})
         //     )
-        // debugger
+        
     }
     // createPost(post: Post){
     //     return this._http.post(this._url,JSON.stringify(post))
