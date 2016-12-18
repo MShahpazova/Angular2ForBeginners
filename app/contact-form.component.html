@@ -9,7 +9,15 @@
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
-        <textarea #comment="ngForm" ngControl="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+        <textarea #comment="ngForm"
+         ngControl="comment"
+         id="comment"
+         cols="30"
+         rows="10"
+          class="form-control"
+          required>
+        </textarea>
+        <div *ngIf="!comment.valid" class="alert alert danger">Comment is required</div>
     </div>
     <button class="btn btn-primary" type="submit">
         Submit
