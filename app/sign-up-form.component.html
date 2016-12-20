@@ -6,6 +6,9 @@
             <div *ngIf="username.errors.required" class="alert alert-danger">Username is required.</div>
             <div *ngIf="username.errors.cannotContainSpace" class="alert alert-danger">Username cannot contain space
             </div>
+            <div *ngIf="username.errors.shouldBeUnique">
+                <class class="aler alert-danger">This username is already taken.</class>
+            </div>
         </div>
 
     </div>
