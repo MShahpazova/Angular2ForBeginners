@@ -10,7 +10,12 @@ export class SignUpFormComponent {
     constructor(fb: FormBuilder){
         //creating a control-group object
         this.form = fb.group({
-            username:['', Validators.compose([Validators.required, UsernameValidators.cannotContainSpace])],
+            //synch validators
+            username:['', Validators.compose([
+                Validators.required,
+                UsernameValidators.cannotContainSpace]),
+                //async validators
+                UsernameValidators.shouldBeUnique],
             password:['', Validators.required]
         })
     }
