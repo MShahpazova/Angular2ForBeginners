@@ -25,6 +25,11 @@ export class SignUpFormComponent {
     //     password: new Control('', Validators.required)
     // });
     signup(){
-        // console.log(this.form.value)
+        //this.form.value returns json object
+        //var result = authService.login(this.form.value)
+        //with find method get access to one of the form controls
+        this.form.find('username').setErrors({
+            invalidLogin: true
+        });
     }
 }
