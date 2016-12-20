@@ -1,4 +1,4 @@
-System.register(['angular2/core', './users.service', 'angular2/http', 'rxjs/Subject', './contact-form.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './users.service', 'angular2/http', 'rxjs/Subject', './sign-up-form.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './users.service', 'angular2/http', 'rxjs/Subj
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, users_service_1, http_1, Subject_1, contact_form_component_1;
+    var core_1, users_service_1, http_1, Subject_1, sign_up_form_component_1;
     var AppComponent;
     return {
         setters:[
@@ -26,10 +26,11 @@ System.register(['angular2/core', './users.service', 'angular2/http', 'rxjs/Subj
             function (Subject_1_1) {
                 Subject_1 = Subject_1_1;
             },
-            function (contact_form_component_1_1) {
-                contact_form_component_1 = contact_form_component_1_1;
+            function (sign_up_form_component_1_1) {
+                sign_up_form_component_1 = sign_up_form_component_1_1;
             }],
         execute: function() {
+            // import {SubscriptionFormComponent} from './subscription-form.component'
             AppComponent = (function () {
                 function AppComponent(ngZone, _usersService) {
                     this.ngZone = ngZone;
@@ -80,8 +81,8 @@ System.register(['angular2/core', './users.service', 'angular2/http', 'rxjs/Subj
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n   \n       <div *ngIf=\"false\"><i class=\"fa fa-spinner fa-spin\"></i></div>\n        <form (keydown)=\"keyDownFunction($event)\">\n          <label for=\"user-name\">Search for user</label>\n          <input #user type=\"text\" id=\"user-name\" value=\"\">\n        </form>\n       <div *ngIf=\"!isLoading\"><img src={{profile_url}} alt=\"Smiley face\" height=\"42\" width=\"42\"/> </div>\n        <ul>\n          <li *ngFor=\"#follower of followers\">\n            <img src = {{follower.avatar_url}} alt=\"Smiley face\" height=\"42\" width=\"42\"/>\n          </li>            \n        </ul>\n        <contact-form></contact-form>\n     ",
-                        directives: [contact_form_component_1.ContactFormComponent],
+                        template: "\n   \n       <div *ngIf=\"false\"><i class=\"fa fa-spinner fa-spin\"></i></div>\n        <form (keydown)=\"keyDownFunction($event)\">\n          <label for=\"user-name\">Search for user</label>\n          <input #user type=\"text\" id=\"user-name\" value=\"\">\n        </form>\n       <div *ngIf=\"!isLoading\"><img src={{profile_url}} alt=\"Smiley face\" height=\"42\" width=\"42\"/> </div>\n        <ul>\n          <li *ngFor=\"#follower of followers\">\n            <img src = {{follower.avatar_url}} alt=\"Smiley face\" height=\"42\" width=\"42\"/>\n          </li>            \n        </ul>\n        <signup-form></signup-form>\n\n     ",
+                        directives: [sign_up_form_component_1.SignUpFormComponent],
                         providers: [users_service_1.UsersService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [core_1.NgZone, users_service_1.UsersService])

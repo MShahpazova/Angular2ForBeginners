@@ -4,7 +4,8 @@ import {UsersService} from './users.service'
 import {HTTP_PROVIDERS} from 'angular2/http'
 import {OnInit} from 'angular2/core'
 import { Subject } from 'rxjs/Subject'
-import {ContactFormComponent} from './contact-form.component'
+import {SignUpFormComponent} from './sign-up-form.component'
+// import {SubscriptionFormComponent} from './subscription-form.component'
 @Component({
     selector: 'my-app',
     template: `
@@ -20,9 +21,10 @@ import {ContactFormComponent} from './contact-form.component'
             <img src = {{follower.avatar_url}} alt="Smiley face" height="42" width="42"/>
           </li>            
         </ul>
-        <contact-form></contact-form>
+        <signup-form></signup-form>
+
      `,
-    directives: [ContactFormComponent],
+    directives: [SignUpFormComponent],
     providers: [UsersService, HTTP_PROVIDERS]
 })
 export class AppComponent implements OnInit {
